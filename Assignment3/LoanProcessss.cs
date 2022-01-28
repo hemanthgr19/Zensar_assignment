@@ -1,7 +1,9 @@
 
-Create a console application to book train tickets. Create a Passanger class with (Name, Age) and write a function called TicketBooking(no_of_tickets)
-that takes no.of tickets to be booked. If the no of tickets is > 5 per booking,raise an user defined exception, and print "cannot book more than 2 tickets".
-Else Print  "Ticket Booked Successfully". Add a Test class to call TicketBooking method by accepting all required details.
+CWrite a class called LoanProcess with Loan_No, Customer Name, LoanAmount, EMI_Amount, Account_Balance as its members. Create a method calculate_EMI() 
+for the LoanAmount , with the rate of interest as 13% for a total of 3 years and store it in the EMI_Amount. The rest of the information to be passed 
+through constructors. Write another function CheckBalance() which checks if the Account_Balance is less than the EMI_AMount. If yes then throw a 
+custom exception. Display " Not Sufficient Balance to repay Loan" in the finally. Give explanatory comments. 
+
 ____________________________________________
 
 
@@ -86,11 +88,11 @@ namespace BookTrainTicket
 
 
 Output=
-Enter Passenger Name: Hemanth
-Enter Passenger Age:24
-Enter no of Tickets you Want to Book: 3
-Ticket Booking succesfully BookTrainTicket
+oan Holder is: Hemanth
+Loan Holder Loan Number is: 123456789
+Enter Account Balance:  50000
+EMI amount is debeted from your account
 
-C:\Users\heman\source\repos\BookTrainTicket\BookTrainTicket\bin\Debug\netcoreapp3.1\BookTrainTicket.exe (process 6096) exited with code 0.
-Press any key to close this window .
-    
+C:\Users\heman\source\repos\BookTrainTicket\BookTrainTicket\bin\Debug\netcoreapp3.1\BookTrainTicket.exe (process 21348) exited with code 0.
+Press any key to close this window . . .
+
