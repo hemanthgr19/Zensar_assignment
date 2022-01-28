@@ -11,7 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BookTrainTicket
+namespace Loans
 {
     class BalanceException : ApplicationException
     {
