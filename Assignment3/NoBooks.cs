@@ -1,4 +1,7 @@
-﻿using System;
+6. Write a program in C# Sharp to insert the information of two books. 
+--------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -66,3 +69,24 @@ namespace BookTrainTicket
         }
     }
 }
+
+---------------------------------------------
+    Output:-
+        Insert The Information of Two Books.
+Information of book : 1
+Input name of the book : Hemanth
+Input the author : Kumar
+
+Information of book : 2
+Input name of the book : Shree
+Input the author : Shreyash
+
+1: Title = Hemanth,  Author = Kumar
+
+2: Title = Shree,  Author = Shreyash
+
+
+C:\Users\heman\source\repos\BookTrainTicket\BookTrainTicket\bin\Debug\netcoreapp3.1\BookTrainTicket.exe (process 22504) exited with code 0.
+Press any key to close this window . . .
+
+
