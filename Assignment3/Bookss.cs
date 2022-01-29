@@ -1,4 +1,7 @@
-﻿using System;
+4. Write a program in C# Sharp to declare a structure called Books with a property, a method to display the value of Book_id, and a private field called Book_id (int)
+    --------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -53,3 +56,12 @@ namespace BookTrainTicket
     }
     
 }
+------------------------------------------------------------------
+    Output:-
+        Enter Book No: 009
+Enter Book Name: Hemanth
+Book ID is 9.
+Book Name is Hemanth.
+
+C:\Users\heman\source\repos\BookTrainTicket\BookTrainTicket\bin\Debug\netcoreapp3.1\BookTrainTicket.exe (process 10232) exited with code 0.
+Press any key to close this window . . .
