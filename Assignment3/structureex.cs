@@ -1,4 +1,7 @@
-﻿using System;
+5. Write a program in C# Sharp to create a nested structure to store two data for an employee in an array. 
+-------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -54,3 +57,22 @@ namespace structuress
 
     }
 }
+
+
+OutPut-
+    ***** Create a nested structure and store data in an array *****
+Enter Total no of employee you want to enter : 2
+Name of the employee : Hemanth
+Enter day of the birth : 19
+Enter month of the birth : 02
+Enter year for the birth : 1997
+
+Name of the employee : Shree
+Enter day of the birth : 25
+Enter month of the birth : 05
+Enter year for the birth : 1998
+
+
+C:\Users\heman\source\repos\BookTrainTicket\BookTrainTicket\bin\Debug\netcoreapp3.1\BookTrainTicket.exe (process 14940) exited with code 0.
+Press any key to close this window . . .
+
