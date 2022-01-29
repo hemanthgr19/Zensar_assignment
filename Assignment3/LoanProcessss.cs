@@ -19,14 +19,15 @@ namespace Loans
     }
     class LoanProcessss
     {
+        
+        // initilizing the variables.
         public int Loan_no;
         public string Customer_Name;
         public double Loan_amount;
         public double emi;
         public double Account_balance;
-        public double r;
-        public int y;
-
+        
+        
         public LoanProcessss(long loanNo, string name)
         {
             Loan_no = (int)loanNo;
@@ -39,7 +40,7 @@ namespace Loans
         {
             Console.WriteLine("Enter loan amount");
             Loan_amount =Convert.ToDouble(Console.ReadLine());
-
+            // Emi Formula
             emi = Loan_amount * 0.13 * 3;
 
             
@@ -47,6 +48,7 @@ namespace Loans
 
         public void check_balance()
         {
+            // Checking the account Balance
             Console.Write("Enter Account Balance:  ");
             Account_balance = Convert.ToDouble(Console.ReadLine());
             if(Account_balance < emi)
@@ -67,12 +69,15 @@ namespace Loans
         static void Main(string[] args)
         {
             Console.WriteLine(" ***Loan Process***");
+            // Giving input to The Loan process method account number and name..
             LoanProcessss Lp = new LoanProcessss(123456789, "Hemanth");
             Console.WriteLine("Loan Holder is: "+ Lp.Customer_Name);
             Console.WriteLine("Loan Holder Loan Number is: " + Lp.Loan_no);
+            //calling the calculating the emi..
             Lp.calculate_EMI();
             try
             {
+                //checking the balance 
                 Lp.check_balance();
 
             }
