@@ -7,11 +7,8 @@ custom exception. Display " Not Sufficient Balance to repay Loan" in the finally
 ____________________________________________
 
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Loans
+
 {
     class BalanceException : ApplicationException
     {
@@ -25,7 +22,7 @@ namespace Loans
         public int Loan_no;
         public string Customer_Name;
         public double Loan_amount;
-        public double Emi_amount;
+        public double emi;
         public double Account_balance;
         public double r;
         public int y;
@@ -34,29 +31,31 @@ namespace Loans
         {
             Loan_no = (int)loanNo;
             Customer_Name = name;
-        }
-        public double calculate_EMI()
-        {
-            r = 13/100;
-            y = 36;
-            Loan_amount = 500000;
             
-            Emi_amount = (Loan_amount * Math.Pow((r / 12) + 1, (y)) * r / 12) / (Math.Pow((r / 12) + 1, (y)) - 1);
-            return (Emi_amount);
+        }
+        
 
+        public void calculate_EMI()
+        {
+            Console.WriteLine("Enter loan amount");
+            Loan_amount =Convert.ToDouble(Console.ReadLine());
+
+            emi = Loan_amount * 0.13 * 3;
+
+            
         }
 
         public void check_balance()
         {
             Console.Write("Enter Account Balance:  ");
             Account_balance = Convert.ToDouble(Console.ReadLine());
-            if(Account_balance < Emi_amount)
+            if(Account_balance < emi)
             {
                 throw (new BalanceException("You dont have sufficient balance in your to clear your EMI amount"));
             }
             else
             {
-                Console.WriteLine("EMI amount id debeted from your account");
+                Console.WriteLine("EMI amount is debeted from your account");
             }
         }
 
@@ -65,9 +64,12 @@ namespace Loans
 
     class Loan
     {
-        public void Main(string[] args)
+        static void Main(string[] args)
         {
+            Console.WriteLine(" ***Loan Process***");
             LoanProcessss Lp = new LoanProcessss(123456789, "Hemanth");
+            Console.WriteLine("Loan Holder is: "+ Lp.Customer_Name);
+            Console.WriteLine("Loan Holder Loan Number is: " + Lp.Loan_no);
             Lp.calculate_EMI();
             try
             {
@@ -86,11 +88,13 @@ namespace Loans
     }
 }
 
-
 Output=
-oan Holder is: Hemanth
+ ***Loan Process***
+Loan Holder is: Hemanth
 Loan Holder Loan Number is: 123456789
-Enter Account Balance:  50000
+Enter loan amount
+5000
+Enter Account Balance:  25000
 EMI amount is debeted from your account
 
 C:\Users\heman\source\repos\BookTrainTicket\BookTrainTicket\bin\Debug\netcoreapp3.1\BookTrainTicket.exe (process 21348) exited with code 0.
