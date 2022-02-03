@@ -10,7 +10,7 @@ namespace Assignment4
 {
     class Product
     {
-        
+        public int Id;
         Dictionary<string, Double> Products = new Dictionary<string, double>();
 
         public void GetData()
@@ -18,6 +18,8 @@ namespace Assignment4
             Console.WriteLine("Enter 10 Products : ");
             for (int i = 0; i < 10; i++)
             {
+                Id = i +1;
+                Console.WriteLine($"Enter the Details of Product  {Id} :");
                 Products.Add(Console.ReadLine() , double.Parse(Console.ReadLine()));
             }
         }
@@ -45,24 +47,34 @@ namespace Assignment4
 
 Output:-
     Enter 10 Products :
+Enter the Details of Product  1:
 TV
 999
+Enter the Details of Product  2:
 Radio
 1500
+Enter the Details of Product  3:
 SmartPhone
 600
+Enter the Details of Product  4:
 laptop
 1000
+Enter the Details of Product  5:
 fridge
 40000
+Enter the Details of Product  6:
 mac
 89000
+Enter the Details of Product  7:
 keyboard
 400
+Enter the Details of Product  8:
 mouse
 100
+Enter the Details of Product  9:
 Android
 888
+Enter the Details of Product  10:
 Iphone
 50000
 After Sorting the Product by Price :
