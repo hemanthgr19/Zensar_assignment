@@ -25,7 +25,7 @@ namespace Assignment4
         public void Sortdata()
         {
             Console.WriteLine("After Sorting the Product by Price :");
-            foreach (KeyValuePair<string, Double> Price in Product1.OrderBy(key => key.Value))
+            foreach (KeyValuePair<string, Double> Price in Products.OrderBy(key => key.Value))
             {
                 Console.WriteLine("Product: {0}, Value: {1}", Price.Key, Price.Value);
             }
