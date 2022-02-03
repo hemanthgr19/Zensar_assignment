@@ -10,8 +10,7 @@ namespace Assignment4
 {
     class Product
     {
-        public int Id;
-        public string Name;
+        
         Dictionary<string, Double> Products = new Dictionary<string, double>();
 
         public void GetData()
