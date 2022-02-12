@@ -166,6 +166,6 @@ Output:-
 401	7011	2011-10-22	2011-10-31	 Sign off	        Completed
 402	7002	2011-08-22	2011-09-30	 System Design   	Completed
 402	7004	2011-10-01	NULL       	Coding	          In Progress
-402	7010	2011-08-01	2011-08-20 	System Analysis 	Completed
+402	7010	2011-08-01	2011-08-20 	System Analysis 	 Completed
 
 -------------------------------------------------------------------------------------
