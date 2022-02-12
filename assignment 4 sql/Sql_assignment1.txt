@@ -327,6 +327,9 @@ ALLEN
 MILLER
 
 
+----------------------------------------------------------------
+
+
 /*8. Find out the names of the employees whose name begin with ‘A’ or ‘M’. */
 select * from Employe
 where ENAME like 'A%' or ENAME like 'M%'
