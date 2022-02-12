@@ -104,7 +104,7 @@ FORD	ANALYST	7902	7566	1981-12-03	3000	NULL	20
 select count(JOB) 'No. of WHo are working as clerk' from Employe 
 where JOB = 'CLERK';
 Output:-
-No. of WHo are working as clerk
+No. of employee who are working as clerk
 4
 
 
