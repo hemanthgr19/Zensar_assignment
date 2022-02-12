@@ -1,6 +1,7 @@
- /*create database sqlassignment1*/
+/*create database sqlassignment1*/
 
 use sqlassignment1
+
 create table DEPT
  (DEPTNO INT primary key,
 DNAME VARCHAR(20) unique,
@@ -40,7 +41,7 @@ values
  (7902,'FORD','ANALYST',7566,'03-DEC-81',3000,null,20),
  (7934,'MILLER','CLERK', 7782,'23-JAN-82',1300,null,10)
 
-
+----------------------------------------------------------------
 
 /*1. List all employees whose name begins with 'A'.*/
   select * from Employe 
@@ -49,11 +50,17 @@ Output:-
 7499	ALLEN	SALESMAN	7698	1981-02-20	1600	300	30
 7876	ADAMS	CLERK	7788	1987-05-23	1100	NULL	20
 
+
+----------------------------------------------------------------
+
 /*2. Select all those employees who don't have a manager. */
 select * from Employe 
 where MGR is Null;
 Output:-
 7839	KING	PRESIDENT	NULL	1981-11-17	5000	NULL	10
+
+
+----------------------------------------------------------------
 
 /*3. List employee name, number and salary for those employees who earn in the range 1200 to 1400. */
 select ENAME, EMPNO, SAL from Employe 
@@ -62,6 +69,9 @@ Output:-
 WARD	7521	1250
 MARTIN	7654	1250
 MILLER	7934	1300
+
+
+----------------------------------------------------------------
 
 /*4. Give all the employees in the RESEARCH department a 10% pay rise. Verify that this has been done by listing all their details before and after the rise. */
 select * from Employe 
@@ -86,12 +96,19 @@ FORD	ANALYST	7902	7566	1981-12-03	3000	NULL	20
 7902	FORD	ANALYST	7566	1981-12-03	3300	NULL	20
 
 
+
+----------------------------------------------------------------
+
+
 /*5. Find the number of CLERKS employed. Give it a descriptive heading. */
 select count(JOB) 'No. of WHo are working as clerk' from Employe 
 where JOB = 'CLERK';
 Output:-
 No. of WHo are working as clerk
 4
+
+
+----------------------------------------------------------------
 
 
 /*6. Find the average salary for each job type and the number of people employed in each job. */
@@ -105,6 +122,9 @@ Output:-
 4	1400	SALESMAN
 
 
+----------------------------------------------------------------
+
+
 /*7. List the employees with the lowest and highest salary. */
 select * from Employe 
 where SAL = (select min(SAL)'Minimum Salary' from Employe)
@@ -115,12 +135,17 @@ MIN:-7369	SMITH	CLERK	7902	1980-12-17	880	NULL	20
 MAX:-7839	KING	PRESIDENT	NULL	1981-11-17	5000	NULL	10
 
 
+----------------------------------------------------------------
+
 
 /*8. List full details of departments that don't have any employees.*/ 
 select * from DEPT
 where DEPTNO not in (select DEPTNO from Employe )
 Output:-
 40	OPERATIONS	BOSTON
+
+
+----------------------------------------------------------------
 
 /*9. Get the names and salaries of all the analysts earning more than 1200 who are based in department 20. Sort the answer by ascending order of name. */
 select ENAME, SAL from Employe 
@@ -131,6 +156,9 @@ FORD	3000
 SCOTT	3000
 
 
+----------------------------------------------------------------
+
+
 /*10. For each department, list its name and number together with the total salary paid to employees in that department. */
 select DNAME, d.DEPTNO, sum(SAL)'Total Salaries in Department' from DEPT d,Employe e
 where d.DEPTNO = e.DEPTNO
@@ -139,6 +167,9 @@ Output:-
 ACCOUNTING	10	8750
 RESEARCH	20	10875
 SALES	        30      9400
+
+
+----------------------------------------------------------------
  
 
 /*11. Find out salary of both MILLER and SMITH.*/
@@ -147,6 +178,9 @@ where ENAME = 'Miller' or ENAME = 'Smith';
 Output:-
 SMITH	800
 MILLER	1300
+
+
+----------------------------------------------------------------
 
 /*12. Find out the names of the employees whose name begin with ‘A’ or ‘M’. */
 select * from Employe  
@@ -158,11 +192,17 @@ Output:-
 7934	MILLER	CLERK	7782	1982-01-23	1300	NULL	10
 
 
+----------------------------------------------------------------
+
+
 /*13. Compute yearly salary of SMITH. */
 select ENAME,(SAL*12) 'Anual Salary' from Employe 
 where ENAME = 'Smith';
 Output:-
 SMITH	9600
+
+
+----------------------------------------------------------------
 
 /*14. List the name and salary for all employees whose salary is not in the range of 1500 and 2850. */
 Select ENAME, SAL from Employe
@@ -180,9 +220,14 @@ FORD	3000
 MILLER	1300
 
 
+----------------------------------------------------------------
 
 
-/*Assignment 2*/
+
+
+*************************Assignment 2**********************************
+
+
 /*1. Retrieve a list of MANAGERS. */
 select EMPNO,ENAME from Employe 
 where EMPNO in (select MGR from Employe)
@@ -195,12 +240,17 @@ Output:-
 7902	FORD
 
 
+----------------------------------------------------------------
+
 /*2. Find out salary of both MILLER and SMITH. */
 select ENAME,SAL from Employe
 where ENAME = 'MILLER' or ENAME = 'SMITH'
 Output:-
 SMITH	800
 MILLER	1300
+
+
+----------------------------------------------------------------
 
 /*3. Find out the names and salaries of all employees earning more than 1000 per month. */
 select ENAME,SAL from Employe
@@ -218,6 +268,9 @@ TURNER	1500
 ADAMS	1100
 FORD	3000
 MILLER	1300
+
+
+----------------------------------------------------------------
 
 /*4. Display the names and salaries of all employees except JAMES. */
 select ENAME,SAL from Employe
@@ -237,12 +290,18 @@ ADAMS	1100
 FORD	3000
 MILLER	1300
 
+
+----------------------------------------------------------------
+
 /*5. Find out the details of employees whose names begin with ‘S’. */
 select * from Employe
 where ENAME like 'S%'
 Output:-
 7369	SMITH	CLERK	7902	1980-12-17	800	NULL	20
 7788	SCOTT	ANALYST	7566	1987-04-19	3000	NULL	20
+
+
+----------------------------------------------------------------
 
 /*6. Find out the names of all employees that have ‘A’ anywhere in their name.*/ 
 select ENAME 'where Employess have  "A" Word in their Name.' from Employe 
@@ -257,12 +316,18 @@ ADAMS
 JAMES
 
 
+----------------------------------------------------------------
+
+
 /*7. Find out the names of all employees that have ‘L’ as their third character in their name. */
 select ENAME 'where Employees have "L" as their Third Character.' from Employe
 where ENAME like '__L%'
 Output:-
 ALLEN
 MILLER
+
+
+----------------------------------------------------------------
 
 
 /*8. Find out the names of the employees whose name begin with ‘A’ or ‘M’. */
@@ -275,6 +340,9 @@ ADAMS
 MILLER
 
 
+----------------------------------------------------------------
+
+
 
 /*9. Compute yearly salary of SMITH. */
 select ENAME,SAL,(SAL*12)'Annual Salary' from Employe
@@ -283,11 +351,19 @@ Output:-
 SMITH	800	9600
 
 
+
+----------------------------------------------------------------
+
+
 /*10. Compute daily salary of JONES. */
 select ENAME,SAL,(SAL/30)'Daily Salary' from Employe
 where ENAME = 'Jones'
 Output:-
 JONES	2975	99.1666666666667
+
+
+
+----------------------------------------------------------------
 
 /*11. Calculate the total monthly salary of all employees. */
 select sum(SAL)'Total Monthly Salary of All Employee' from Employe
@@ -295,10 +371,17 @@ Output:-
 29025
 
 
+
+----------------------------------------------------------------
+
+
 /*12. Print the average annual salary. */
 select  avg(SAL*12) 'Average Annual Salary' from Employe
 Output:-
 24878.5714285714
+
+
+----------------------------------------------------------------
 
 /*13. Select the name, job, salary, department number of all employees except SALESMAN from department number 30. */
 select ENAME,JOB,SAL,DEPTNO from Employe
@@ -307,12 +390,19 @@ Output:-
 BLAKE	MANAGER	2850	30
 JAMES	CLERK	950	30
 
+
+----------------------------------------------------------------
+
+
 /*14. List unique departments of the EMP table. */
 select distinct(DEPTNO) 'Unique Department ID in Employee Table.' from Employe
 Output:-
 10
 20
 30
+
+
+----------------------------------------------------------------
 
 /*15. List the name and salary of employees who earn more than 1500 and are in department 10 or 30. Label the columns Employee and Monthly Salary respectively.*/
 select ENAME 'Employee',SAL 'Monthly Salary',DEPTNO from Employe
@@ -322,3 +412,6 @@ ALLEN	1600	30
 BLAKE	2850	30
 CLARK	2450	10
 KING	5000	10
+
+
+----------------------------------------------------------------
