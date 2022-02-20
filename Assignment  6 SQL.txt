@@ -1,0 +1,215 @@
+1.	Write a T-SQL Program to generate complete payslip of a given employee with respect to the following condition
+a)	HRA  as 10% Of sal
+b)	DA as  20% of sal
+c)	PF as 8% of sal
+d)	IT as 5% of sal
+e)	Deductions as sum of PF and IT
+f)	Gross Salary as sum of SAL,HRA,DA and Deductions
+g)	Net salary as  Gross salary- Deduction
+
+program:- 
+
+DECLARE
+@Sal float = 50000,
+@HRA float,
+@DA float,
+@PF float,
+@IT float,
+@Deduction float,
+@GS float,
+@NS float;
+
+BEGIN
+--SET @Sal = 50000;
+SET @HRA = @Sal *0.10;
+SET @DA = @Sal *0.20;
+SET @PF = @Sal *0.08;
+SET @IT = @Sal * 0.05;
+SET @Deduction = @PF + @IT;
+SET @GS = @Sal+ @HRA + @DA + @Deduction;
+SET @NS = @GS - @Deduction;
+
+print 'HRA:';
+print @HRA;
+print 'DA:';
+print @DA;
+print 'PF:';
+print @PF;
+print 'IT:';
+print @IT;
+print 'DEDUCTION:';
+print @DEDUCTION;
+print 'GS:';
+print @GS;
+print 'NS:';
+print @NS;
+END;
+
+output:- 
+HRA:
+5000
+DA:
+10000
+PF:
+4000
+IT:
+2500
+DEDUCTION:
+6500
+GS:
+71500
+NS:
+65000
+--------------------------------
+
+2.	Write a T-SQL Program to Display complete result of a given student. (Note: Consider 10th standard result sheet and Student table structure as (sno,sname,maths,phy,comp)
+
+Program:-
+
+DECLARE
+@SID INT,
+@SNAME VARCHAR,
+@SM INT,
+@SP INT,
+@SC INT,
+@ST INT,
+@SPR FLOAT;
+
+BEGIN
+SET @SID = 1;
+SET @SNAME = 'Hemanth';
+SET @SM = 99;
+SET @SP = 88;
+SET @SC = 89;
+SET @ST = @SM + @SP + @SC;
+SET @SPR = @ST/3;
+
+CREATE TABLE RESULTS(
+SNO INT,Sname varchar(20),Maths INT,Physics INT,Computer INT,Total INT,Percentage FLOAT)
+INSERT INTO RESULTS
+values(@SID INT,@SNAME VARCHAR,@SM INT,@SP INT,@SC INT,@ST INT,@SPR FLOAT)
+SELECT * FROM RESULTS
+END;
+
+OUTPUT:-
+
+
+1 Hemanth 99 88 89 276 92
+
+---------------------------------
+3.Write a T-SQL Program to find the factorial of a given number.
+
+program:- 
+
+BEGIN
+DECLARE
+@FACT INT,
+@N INT;
+
+SET @N = 5;
+SET @FACT = 1;
+
+WHILE @N > 0
+BEGIN
+SET @FACT = @FACT *@N
+SET @N = @N-1
+END
+PRINT @FACT
+END
+
+
+OUTPUT:-
+
+120
+
+---------------------------------------------------------
+4.	Create a stored procedure to generate multiplication tables up to a given number.
+
+PROGRAM:-
+
+BEGIN
+DECLARE @I INT = 1, @NUM INT = 25, @N INT;
+WHILE @I< = 10
+BEGIN 
+SET @N = @NUM * @I
+PRINT @N
+SET @I = @I+1
+END
+END
+
+OUTPUT:-
+6
+12
+18
+24
+30
+36
+42
+48
+54
+60
+
+------------------------------------------------
+
+
+5.	Create a user defined function calculate Bonus for all employees of a  given job using following conditions
+--a.	       For Deptno10 employees 15% of sal as bonus.
+--b.	       For Deptno20 employees  20% of sal as bonus
+--c.	      For Others employees 5%of sal as bonus
+
+Program:-
+
+ 
+use assignmentExe1
+
+select * from emp
+
+create or alter function CalculateBonus(@ejob varchar(20))	
+returns table
+as
+return(select ename,job,sal,deptno from emp where job=@ejob)
+go
+update emp set sal=sal+(sal*.15) where deptno=10
+update emp set sal=sal+(sal*.2) where deptno=20
+update emp set sal=sal+(sal*.05) where deptno<>10 and  deptno<>20
+select * from CalculateBonus('ANALYST')
+
+OUTPUT:-
+
+1 SCOTT ANALYST 3600 20
+
+
+-----------------------------------------------------
+
+6.	Create a trigger to restrict data manipulation on EMP table during General holidays.
+--Display the error message like “Due to Independence day you cannot manipulate data”
+--Note: Create holiday table as (holiday_date,Holiday_name) store at least 4 holiday details
+
+Program:-
+
+create table holiday
+(holiday_date varchar(20),
+holiday_name varchar(20))
+
+ 
+insert into holiday values
+('15-aug-2021','Independence Day'),
+('2-oct-2021','Gandhi jayanthi'),
+('5-sep-2021','Teachers day'),
+('15-sep-2021','Engineering day')
+ 
+select * from holiday
+
+create or alter trigger Restricteddatamanipulation
+on holiday
+instead of update
+as
+	raiserror('Due to public Holiday you cannot manipulate data',16,1)
+
+update  holiday set holiday_date='4-aug-2021' where holiday_date='5-sep-2021'
+
+select * from holiday
+
+OUTPUT:-
+
+Due to public Holiday you cannot manipulate data
