@@ -227,3 +227,99 @@ namespace assignment6
     }
     
 }
+--------------------------------------------------------------------------------------------------
+Outputs:--
+
+1. Display detail of all the employee
+1001   Malcolm   Daruwalla   Manager       1984-11-16   2011-06-08   Mumbai
+1002   Asdin     Dhalla      AsstManager   1984-08-20   2012-07-07   Mumbai
+1003   Madhavi   Oza         Consultant    1987-11-14   2015-04-12   Pune
+1004   Saba      Shaikh      SE            1990-06-03   2016-02-02   Pune
+1005   Nazia     Shaikh      SE            1991-03-08   2016-02-02   Mumbai
+1006   Amit      Pathak      Consultant    1989-11-07   2014-08-08   Chennai
+1007   Vijay     Natrajan    Consultant    1989-12-02   2015-06-01   Mumbai
+1008   Rahul     Dubey       Associate     1993-11-11   2014-11-06   Chennai
+1009   Suresh    Mistry      Associate     1992-08-12   2014-12-03   Chennai
+1010   Sumit     Shah        Manager       1991-04-12   2016-01-02   Pune
+
+
+2. the employee whose location is not Mumbai:
+
+1003   Madhavi   Oza         Consultant    1987-11-14   2015-04-12   Pune
+1004   Saba      Shaikh      SE            1990-06-03   2016-02-02   Pune
+1006   Amit      Pathak      Consultant    1989-11-07   2014-08-08   Chennai
+1008   Rahul     Dubey       Associate     1993-11-11   2014-11-06   Chennai
+1009   Suresh    Mistry      Associate     1992-08-12   2014-12-03   Chennai
+1010   Sumit     Shah        Manager       1991-04-12   2016-01-02   Pune
+
+
+3.the employee whose title is AsstManager:
+1002   Asdin     Dhalla      AsstManager   1984-08-20   2012-07-07   Mumbai
+
+
+4.the employee whose Last Name start with S:
+Shaikh
+Shaikh
+Shah
+
+
+5.the employee who have joined before 1/1/2015 :
+1001   Malcolm   Daruwalla   Manager       1984-11-16   2011-06-08   Mumbai
+1002   Asdin     Dhalla      AsstManager   1984-08-20   2012-07-07   Mumbai
+1006   Amit      Pathak      Consultant    1989-11-07   2014-08-08   Chennai
+1008   Rahul     Dubey       Associate     1993-11-11   2014-11-06   Chennai
+1009   Suresh    Mistry      Associate     1992-08-12   2014-12-03   Chennai
+
+
+6.the employee whose date of birth is after 1/1/1990 :
+1004   Saba      Shaikh      SE            1990-06-03   2016-02-02   Pune
+1005   Nazia     Shaikh      SE            1991-03-08   2016-02-02   Mumbai
+1008   Rahul     Dubey       Associate     1993-11-11   2014-11-06   Chennai
+1009   Suresh    Mistry      Associate     1992-08-12   2014-12-03   Chennai
+1010   Sumit     Shah        Manager       1991-04-12   2016-01-02   Pune
+
+
+7.the employee whose designation is Consultant and Associate :
+1003   Madhavi   Oza         Consultant    1987-11-14   2015-04-12   Pune
+1006   Amit      Pathak      Consultant    1989-11-07   2014-08-08   Chennai
+1007   Vijay     Natrajan    Consultant    1989-12-02   2015-06-01   Mumbai
+1008   Rahul     Dubey       Associate     1993-11-11   2014-11-06   Chennai
+1009   Suresh    Mistry      Associate     1992-08-12   2014-12-03   Chennai
+
+
+8.Display total number of employees :
+10
+
+
+9. Display total number of employees belonging to "Chennai" : 3
+
+
+10. Display highest employee id from the list :1010
+
+
+11. Display  total number of employee who have joined after 1/1/2015 : 5
+
+
+12. Display total number of employee whose designation is not "Associate" :2
+
+
+13. Display total number of employee based on City:
+City       No.of Employees
+Mumbai          4
+Pune            3
+Chennai         3
+
+
+14. Display total number of employee based on city and title :
+Ttile      No.of Employees
+Manager                 2
+AsstManager             1
+Consultant              3
+SE                      2
+Associate               2
+
+
+15. Display total number of employee who is youngest in the list :
+The youngest Employee Of All the Employees is : Rahul   Dubey
+
+
