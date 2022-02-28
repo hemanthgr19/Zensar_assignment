@@ -1,0 +1,26 @@
+2.2.	Write a JavaScript to get the extension of a filename given by the user(hint: use split and pop())
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Extension of a filename</title>
+</head>
+<body>
+    <form>
+        <input type="file" id="file1" />
+        <input type="button" value="Check Extension" onclick="checkFileExtension();"/>
+    </form>
+    <p style="font-style: italic;">The file extension is: 
+        <span class="output"></span>
+    </p>
+    <script language="javascript">
+        function checkFileExtension() {
+            fileName = document.querySelector('#file1').value;
+            extension = fileName.split('.').pop();
+            document.querySelector('.output').textContent = extension;
+        };
+    </script>
+</body>
+</html>
