@@ -1,0 +1,11 @@
+In this case study I have done the 
+* Windows application
+ --Insertion
+ --Delete
+ --edit
+*i have connected to local server sql
+ -- created a student data base
+ -- in that created student table
+ -- id,name,course,fee.
+
+Till this i have completed.

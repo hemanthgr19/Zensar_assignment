@@ -1,0 +1,9 @@
+create databse Studentmi
+
+use Studentmi
+
+create table Studenttable(
+Id int,
+Name Varchar(30)
+course  varchar(20),
+fee varchar(20));
