@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MvcAssign1.Models.Customer>
+@{ ViewBag.Title = "Cust_With_OrderID"; }
+
+
+
+<h2>Customer with OrderID</h2>
+@foreach (var item in Model)
+{
+<li>@item.CustomerID</li>
+<li>@item.CompanyName</li>
+<li>@item.ContactName</li>
+ <li>@item.ContactTitle</li>
+  <li>@item.Address</li>
+ <li>@item.City</li>
+  <li>@item.PostalCode</li>
+ <li>@item.Country</li>
+ <li>@item.Phone</li>
+<li>@item.Fax</li>          
+  }
+
