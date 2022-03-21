@@ -1,0 +1,76 @@
+using System;
+using System.Data.SqlClient;
+
+namespace CodeTest
+{
+    class Program
+    {
+        public static SqlConnection con;
+        public static SqlCommand cmd;
+        public static SqlDataReader dr;
+
+
+        //public static string connectionString = "data source= LAPTOP-TICSCMGM; initial catalog= Code_Employee;integrated security=true";
+
+        static void InsertData()
+        {
+            try
+            {
+                con = getConnection();
+                
+                Console.WriteLine("Enter Employee Details  Empname, EmpSal, EmpType");
+                
+                string ename,etype;
+                double esal;
+                
+                ename = Console.ReadLine();
+                
+                esal = Convert.ToDouble(Console.ReadLine());
+                if (esal < 25000)
+                {
+                    Console.WriteLine("employee salary must be graeter than or equal to 25000");
+                    esal = 9999999; // for wrong condition
+                }
+
+                Console.Write("Enter empployee type('C'/'P'):");
+                etype = Console.ReadLine();
+                if (!(etype.Equals("C") || etype.Equals("P")))
+                {
+                    Console.WriteLine("Enter proper employee type");
+                }
+
+                cmd = new SqlCommand("Code_Employee", con);
+                
+                cmd.Parameters.AddWithValue("@empname", ename);
+                
+                
+                cmd.Parameters.AddWithValue("@empsal", esal);
+                cmd.Parameters.AddWithValue("@emptype", etype);
+                cmd.Connection = con;
+
+                dr = cmd.ExecuteReader();
+
+                Console.WriteLine("record inserted successfully");
+                Console.Read();
+
+            }
+            catch (SqlException se)
+            {
+                Console.WriteLine(se.Message);
+            }
+        }
+
+        static SqlConnection getConnection()
+        {
+            con = new SqlConnection("data source= LAPTOP-TICSCMGM;initial catalog= Code_Employee ;integrated security=true");
+            con.Open();
+            return con;
+
+        }
+
+        static void Main(string[] args)
+        {
+            InsertData();
+        }
+    }
+}
