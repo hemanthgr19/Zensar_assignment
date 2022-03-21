@@ -10,8 +10,7 @@ namespace CodeTest
         public static SqlDataReader dr;
 
 
-        //public static string connectionString = "data source= LAPTOP-TICSCMGM; initial catalog= Code_Employee;integrated security=true";
-
+        
         static void InsertData()
         {
             try
