@@ -29,7 +29,7 @@ namespace CodeTest
                 if (esal < 25000)
                 {
                     Console.WriteLine("employee salary must be graeter than or equal to 25000");
-                    esal = 9999999; // for wrong condition
+                    esal = 9999999; 
                 }
 
                 Console.Write("Enter empployee type('C'/'P'):");
